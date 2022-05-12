@@ -9,25 +9,12 @@ pipeline {
          steps {
             sh '''
                 pip install playwright
-                playwright install
+                playwright install --with-deps
             '''
          }
       }
 
-      stage('help'){
-        steps{
-            sh 'playwright --help'
-        }
-      }
-
-      stage('test'){
-        steps{
-            sh '''
-                npx playwright test --list
-                npx playwright test
-            '''
-        }
-      }
+     
 
     }
 
