@@ -8,8 +8,8 @@ pipeline {
       stage('install playwright') {
          steps {
             sh '''
-                pip install playwright
-                playwright install --with-deps
+                npm i -D@plawright/test
+                npx playwright install
             '''
          }
       }
