@@ -1,11 +1,11 @@
 pipeline {
-   agent { docker { image 'mcr.microsoft.com/playwright:v1.22.0-focal' } }
-   stages {
-      stage('e2e-tests') {
-         steps {
-            sh 'npm install'
-            sh 'npm run test'
-         }
-      }
-   }
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+               bat label: '',script: 'python addnumbers.py'
+            }
+        }
+    }
 }
